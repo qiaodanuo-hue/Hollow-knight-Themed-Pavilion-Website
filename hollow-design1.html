@@ -1,57 +1,82 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>设计理念</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+<title>设计理念 | Hollow Knight Themed Pavilion</title>
+<link href="style/responsive.css" rel="stylesheet" type="text/css" />
 <link href="style/hollow-design1.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 <div id="box1">
-  <div id="header">
-    <div id="logo"><img src="img/LOGO.png" width="207" height="62" /></div>
-    <div id="nav">
-    <ul><li><a href="hollow.html">首页</a></li></ul>
-    <ul><li><a href="hollow-zhanguan.html">展馆介绍</a></li></ul>
-    <ul>
-     <li><a href="#">关于设计</a>
-      <ul >
-      <li><a href="hollow-design1.html">设计理念</a></li>
-      <li><a href="hollow-design2.html">设计流程</a></li>
-      </ul>
-     </li>
-    </ul>
-    <ul>
-     <li><a href="#">关于游戏</a>
-      <ul style="left:270px; top:60px;">
-      <li><a href="hollow-game1.html">空洞骑士</a></li>
-      <li><a href="hollow-game2.html">丝之歌</a></li>
-      </ul>
-     </li>
-    </ul>
+  <!-- Header -->
+  <header id="header">
+    <div id="logo">
+      <a href="index.html"><img src="img/LOGO.png" alt="Logo" /></a>
     </div>
-  </div>
+    <nav id="nav">
+      <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="hollow-zhanguan.html">展馆介绍</a></li>
+        <li>
+          <a href="#">关于设计 ▾</a>
+          <ul>
+            <li><a href="hollow-design1.html">设计理念</a></li>
+            <li><a href="hollow-design2.html">设计流程</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">关于游戏 ▾</a>
+          <ul>
+            <li><a href="hollow-game1.html">空洞骑士</a></li>
+            <li><a href="hollow-game2.html">丝之歌</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
- <div id="up1"><img src="img/upperend.png" width="251" height="72" /></div>
- <div id="title2">设计理念</div>
- <div id="game1"><a href="https://hkss.huijiwiki.com/wiki/%E9%9A%90%E8%97%8F%E7%9A%84%E6%A2%A6"><img src="img/game1.png" width="267" height="370" /></a></div>
- <div id="game2">
- <a href="https://hkss.huijiwiki.com/wiki/%E6%A0%BC%E6%9E%97%E5%89%A7%E5%9B%A2"><img src="img/gmae2.png" width="267" height="370" /></a></div>
- <div id="game3">
- <a href="https://hkss.huijiwiki.com/wiki/%E7%94%9F%E5%91%BD%E8%A1%80"><img src="img/game3.png" width="267" height="370" /></a></div>
- <div id="game4">
- <a href="https://hkss.huijiwiki.com/wiki/%E5%AF%BB%E7%A5%9E%E8%80%85"><img src="img/gmae4.png" width="267" height="370" /></a></div>
- <div id="gameword">
-  <div id="linian">
-    <p>展厅按照游戏内容的颁布顺序（如上）依行设计，同设立了包括本体在内的5个不同风格展厅，并在展馆开篇设立了序厅，以及在展馆结尾设立了休闲体验区，同时结合游戏内容对全馆外观进行了设计。</p>
-    <p>&nbsp;</p>
- 
-    <p>展厅设计意在展现游戏的内容内核及制作设计，为游戏玩家提供现实交流平台，增加与游戏的实感共鸣，且通过展厅的浏览增加热度，该作室的续作推出做准备。</p>
+  <!-- Title & Upper Ornament -->
+  <section class="design-header-area">
+    <div class="design-ornament-up"><img src="img/upperend.png" alt="" /></div>
+    <h1 id="title2">设计理念</h1>
+  </section>
+
+  <!-- 4 DLC Theme Cards -->
+  <section class="dlc-cards-grid" aria-label="展厅对应游戏DLC">
+    <a href="https://hkss.huijiwiki.com/wiki/%E9%9A%90%E8%97%8F%E7%9A%84%E6%A2%A6" target="_blank" rel="noopener noreferrer" class="dlc-card card-dream" title="隐藏的梦 (Hidden Dreams)">
+      <img src="img/game1.png" alt="隐藏的梦" />
+    </a>
+    <a href="https://hkss.huijiwiki.com/wiki/%E6%A0%BC%E6%9E%97%E5%89%A7%E5%9B%A2" target="_blank" rel="noopener noreferrer" class="dlc-card card-grimm" title="格林剧团 (The Grimm Troupe)">
+      <img src="img/gmae2.png" alt="格林剧团" />
+    </a>
+    <a href="https://hkss.huijiwiki.com/wiki/%E7%94%9F%E5%91%BD%E8%A1%80" target="_blank" rel="noopener noreferrer" class="dlc-card card-lifeblood" title="生命血 (Lifeblood)">
+      <img src="img/game3.png" alt="生命血" />
+    </a>
+    <a href="https://hkss.huijiwiki.com/wiki/%E5%AF%BB%E7%A5%9E%E8%80%85" target="_blank" rel="noopener noreferrer" class="dlc-card card-godmaster" title="寻神者 (Godmaster)">
+      <img src="img/gmae4.png" alt="寻神者" />
+    </a>
+  </section>
+
+  <!-- Philosophy Text -->
+  <section id="gameword">
+    <div id="linian">
+      <p>展厅按照游戏内容的颁布顺序依次设计，设立了包括本体在内的5个不同风格展厅，并在展馆开篇设立了序厅，以及在展馆结尾设立了休闲体验区，同时结合游戏内容对全馆外观进行了整体构思与设计。</p>
+      <p>展厅设计意在展现游戏的内容内核及制作设计，为游戏玩家提供现实交流平台，增加与游戏的实感共鸣，且通过展厅的浏览增加热度，为该工作室的续作推出做充分准备与预热。</p>
+    </div>
+  </section>
+
+  <!-- Lower Ornament & Navigation to Design Process -->
+  <div class="design-ornament-low"><img src="img/lowerend.png" alt="" /></div>
+  <div class="next-step-area">
+    <a href="hollow-design2.html" class="next-step-btn">
+      <img src="img/Quill.png" alt="" />
+      <span>了解设计流程</span>
+    </a>
   </div>
- </div>
- <div id="low1"><img src="img/lowerend.png" width="1090" height="54" /></div>
- <div id="bi"><img src="img/Quill.png" width="52" height="61" /></div>
- <div id="liuc"><a href="hollow-design2.html">设计流程</a></div>
 </div>
+
+<script type="text/javascript" src="js/nav.js"></script>
 </body>
 </html>

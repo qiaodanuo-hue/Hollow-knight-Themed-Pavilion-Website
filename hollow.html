@@ -1,94 +1,121 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+<title>空洞骑士主题展馆 | Hollow Knight Themed Pavilion</title>
+<link href="style/responsive.css" rel="stylesheet" type="text/css" />
 <link href="style/hollow.css" rel="stylesheet" type="text/css" />
-<title>空洞骑士主题展馆|Hollow Knight themed pavilion</title>
 </head>
 
 <body>
 <div id="whole">
-    <div class="carousel">
-         <!--图片列表  -->
-        <ul id="list">
-            <li><img src="img/topimg2.jpg" width="1440" height="670" /></li>
-            <li><img src="img/zhanguan/展厅1（2）.png" width="1920" height="1080" /></li>
-            <li><img src="img/zhanguan/展厅2（2）.png" width="1920" height="1080" /></li>
-            <li><img src="img/zhanguan/展厅3（2）.png" width="1920" height="1080" /></li>
-            <li><img src="img/zhanguan/展厅5（1）.png" width="1920" height="1080" /></li>
-        </ul>
-         <!-- 左右按钮 -->
-        <a href="javascript:;" class="leftbtn" ><img src="img/左.png" width="30" height="30" alt="" srcset=""></a>
-        <a href="javascript:;" class="rightbtn"><img src="img/右.png" width="30" height="30" alt="" srcset=""></a>
+  <!-- Header -->
+  <header id="header">
+    <div id="logo">
+      <a href="index.html"><img src="img/LOGO.png" alt="Hollow Knight Logo" /></a>
+    </div>
+    <nav id="nav">
+      <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="hollow-zhanguan.html">展馆介绍</a></li>
+        <li>
+          <a href="#">关于设计 ▾</a>
+          <ul>
+            <li><a href="hollow-design1.html">设计理念</a></li>
+            <li><a href="hollow-design2.html">设计流程</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">关于游戏 ▾</a>
+          <ul>
+            <li><a href="hollow-game1.html">空洞骑士</a></li>
+            <li><a href="hollow-game2.html">丝之歌</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner Carousel -->
+  <section class="carousel" aria-label="展馆幻灯片">
+    <ul id="list">
+      <li><img src="img/topimg2.jpg" alt="空洞骑士主题展馆全貌" /></li>
+      <li><img src="img/zhanguan/展厅1（2）.png" alt="展厅一" /></li>
+      <li><img src="img/zhanguan/展厅2（2）.png" alt="展厅二" /></li>
+      <li><img src="img/zhanguan/展厅3（2）.png" alt="展厅三" /></li>
+      <li><img src="img/zhanguan/展厅5（1）.png" alt="展厅五" /></li>
+    </ul>
+    <!-- 左右按钮 -->
+    <a href="javascript:;" class="leftbtn" aria-label="上一张"><img src="img/左.png" alt="Left" /></a>
+    <a href="javascript:;" class="rightbtn" aria-label="下一张"><img src="img/右.png" alt="Right" /></a>
+    <!-- 圆点列表 -->
+    <ul id="location_list">
       <li class="active"></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-        <!-- 圆点列表 -->
-        <ul id="location_list">
-            <!-- 默认激活第一个 -->
-            <li class="active"></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-  </div>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </section>
 
-  <div id="header">
-    <div id="logo"><img src="img/LOGO.png" width="207" height="62" /></div>
-    <div id="nav">
-    <ul><li><a href="hollow.html">首页</a></li></ul>
-    <ul><li><a href="hollow-zhanguan.html">展馆介绍</a></li></ul>
-    <ul>
-     <li><a href="#">关于设计</a>
-      <ul >
-      <li><a href="hollow-design1.html">设计理念</a></li>
-      <li><a href="hollow-design2.html">设计流程</a></li>
-      </ul>
-     </li>
-    </ul>
-    <ul>
-     <li><a href="#">关于游戏</a>
-      <ul style="left:270px; top:60px;">
-      <li><a href="hollow-game1.html">空洞骑士</a></li>
-      <li><a href="hollow-game2.html">丝之歌</a></li>
-      </ul>
-     </li>
-    </ul>
-    </div>
-  </div>
   <div id="designer">Design by Li Jinglei , Gao Xinming , Zhang Yuanyuan</div>
-  <div id="page12">
-  <div id="upperend"><img src="img/upperend.png" width="290" height="84" /></div>
-<div id="title1">空洞骑士主题展馆</div>
 
-<div id="art">
- 空洞骑士主题展馆是基于游戏《Hollow knight》设计的一个游戏文化介绍及体验展厅，全馆按照游戏内容的颁布顺序依次介绍了正剧背景——空洞骑士、dlc1——隐藏的梦、新章——格林剧团、dlc2——生命血、终章——寻神者，同时在展馆开篇设立了序厅，以及在展馆结尾设立了休闲体验区，并对全馆外观进行了设计。展厅设计意在展现游戏的内容内核及制作设计，同时为游戏玩家提供现实交流平台，增加与游戏的实感共鸣，且通过展厅的内容呈现为该游戏工作室的续作预热。</div>
-  <div id="lowerend"><img src="img/lowerend.png" width="1090" height="54" /></div>
-  </div>
-  <div id="page13">
-    <div id="video1">
-      <embed src="video/video1.mp4" width="1100" height="617"></embed>
+  <!-- Page 12: Description -->
+  <section id="page12">
+    <div id="upperend"><img src="img/upperend.png" alt="Decoration Header" /></div>
+    <h1 id="title1">空洞骑士主题展馆</h1>
+    <div id="art">
+      空洞骑士主题展馆是基于游戏《Hollow knight》设计的一个游戏文化介绍及体验展厅，全馆按照游戏内容的颁布顺序依次介绍了正剧背景——空洞骑士、dlc1——隐藏的梦、新章——格林剧团、dlc2——生命血、终章——寻神者，同时在展馆开篇设立了序厅，以及在展馆结尾设立了休闲体验区，并对全馆外观进行了设计。展厅设计意在展现游戏的内容内核及制作设计，同时为游戏玩家提供现实交流平台，增加与游戏的实感共鸣，且通过展厅的内容呈现为该游戏工作室的续作预热。
     </div>
-  </div>
-  <div id="page14">
-    <div id="turn1"><a href="hollow-zhanguan.html"><img src="img/turn1.png" width="351" height="200" /></a></div>
-    <div id="turn2"><a href="hollow-design1.html"><img src="img/turn2.jpg" width="351" height="200" /></a></div>
-    <div id="turn3"><a href="hollow-game1.html"><img src="img/turn3.png" width="351" height="200" /></a></div>
-    <div id="turn1word">展馆</div>
-    <div id="turn2word">设计</div>
-    <div id="turn3word">游戏</div>
-    <div id="choice"><img src="img/choice.jpg" width="58" height="71" /></div>
-<div id="learnmore">开始了解</div>
-  </div>
-</div>
+    <div id="lowerend"><img src="img/lowerend.png" alt="Decoration Footer" /></div>
+  </section>
+
+  <!-- Page 13: Online Video Theater -->
+  <section id="page13">
+    <div class="video-section-header">
+      <h2 class="video-section-title">展馆实录 · 在线观看</h2>
+      <div class="video-section-subtitle">Hollow Knight Pavilion 3D Virtual Tour & Walkthrough</div>
+    </div>
+    <div id="video1">
+      <div class="video-player-container">
+        <video controls playsinline preload="metadata" poster="img/topimg2.jpg">
+          <source src="video/video1.mp4" type="video/mp4" />
+          <source src="https://media.githubusercontent.com/media/qiaodanuo-hue/Hollow-knight-Themed-Pavilion-Website/main/video/video1.mp4" type="video/mp4" />
+          您的浏览器不支持在线视频播放。
+        </video>
+      </div>
+      <div class="video-caption-bar">
+        <span class="video-tag">在线视频 · 点击直接观看</span>
+        <span>展馆全景漫游实录与室内场景灯光演练</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page 14: Navigation Cards -->
+  <section id="page14">
+    <div class="explore-header">
+      <img src="img/choice.jpg" alt="Choice icon" />
+      <div id="learnmore">开始了解</div>
+    </div>
+    <div class="cards-container">
+      <a href="hollow-zhanguan.html" class="nav-card">
+        <div class="card-thumb"><img src="img/turn1.png" alt="展馆" /></div>
+        <div class="card-title">展馆介绍</div>
+      </a>
+      <a href="hollow-design1.html" class="nav-card">
+        <div class="card-thumb"><img src="img/turn2.jpg" alt="设计" /></div>
+        <div class="card-title">关于设计</div>
+      </a>
+      <a href="hollow-game1.html" class="nav-card">
+        <div class="card-thumb"><img src="img/turn3.png" alt="游戏" /></div>
+        <div class="card-title">关于游戏</div>
+      </a>
+    </div>
+  </section>
 </div>
 
 <script type="text/javascript" src="js/turn.js"></script>
- 
+<script type="text/javascript" src="js/nav.js"></script>
 </body>
-
 </html>

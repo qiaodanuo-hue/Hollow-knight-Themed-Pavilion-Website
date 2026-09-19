@@ -1,184 +1,203 @@
 @charset "utf-8";
-/* CSS Document */
-*{
-	margin:0px;
-	padding:0px;
-	
-}
-#box4{
-position: relative;
-width: 1440px;
-height: 1455px;
-background: #000000;
-background-image:url(../img/%E8%83%8C%E6%99%AF2.png);
-}
-#header {
-	position: absolute;
-    width: 1440px;
-    height: 60px;
-    left: 0px;
-    top: 0px;
-    background: rgba(0, 0, 0, 0.90);
+/* CSS Document - Responsive Silksong Sequel Page (hollow-game2) */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#logo {
-	position: absolute;
-	width: 214px;
-	height: 48px;
-	left: 64px;
-	top: -2px;
-}
-#nav {
-	position: absolute;
-	width: 638px;
-	height: 48px;
-	left: 791px;
-	top: 8px;
-	font-size: 16px;
-
-
-	
-}
-               
-#nav ul {
-    list-style: none;
-    margin-left: 50px;
-	font-weight:400;
- }           
-#nav li {
-    display: block; 
-    float:left;             
- }           
-#nav a {
-    line-height: 40px;
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #080305;
     color: #fff;
+    overflow-x: hidden;
+}
+
+#box4 {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    background: #080305 url(../img/%E8%83%8C%E6%99%AF2.png) repeat;
+    padding-top: 60px;
+    padding-bottom: 70px;
+}
+
+.silksong-panel {
+    max-width: 1080px;
+    width: 92%;
+    margin: 40px auto;
+    background: rgba(14, 6, 10, 0.93);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 100, 130, 0.2);
+    border-radius: 12px;
+    padding: clamp(24px, 4vw, 54px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(220, 40, 70, 0.15);
+}
+
+.silksong-header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: clamp(26px, 3.8vw, 36px);
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.06em;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 100, 130, 0.2);
+}
+
+.silksong-header-title img {
+    width: clamp(36px, 4.5vw, 48px);
+    height: auto;
+}
+
+/* Intro Grid: Hornet & Text */
+.silksong-intro-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.3fr;
+    gap: clamp(20px, 3.5vw, 40px);
+    align-items: center;
+}
+
+.hornet-img-box {
+    display: flex;
+    justify-content: center;
+}
+
+.hornet-img-box img {
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 120, 150, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.hornet-img-box:hover img {
+    transform: scale(1.02);
+}
+
+.silksong-desc-text {
+    font-size: clamp(14px, 1.6vw, 16px);
+    line-height: 2.1;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: justify;
+}
+
+.silksong-desc-text p {
+    margin-bottom: 14px;
+}
+
+/* Video & English Lore Section */
+.silksong-media-section {
+    margin-top: 40px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255, 100, 130, 0.15);
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: clamp(20px, 3.5vw, 40px);
+    align-items: center;
+}
+
+.silksong-video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 100, 130, 0.3);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.85);
+}
+
+.silksong-video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.silksong-lore-box {
+    background: rgba(30, 12, 18, 0.7);
+    border: 1px solid rgba(255, 120, 150, 0.25);
+    border-radius: 8px;
+    padding: clamp(16px, 2.5vw, 24px);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.silksong-lore-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ff99aa;
+}
+
+.silksong-lore-header img {
+    width: 28px;
+    height: 28px;
+}
+
+.silksong-lore-text {
+    font-size: clamp(13px, 1.4vw, 15px);
+    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.85);
+    font-style: italic;
+}
+
+/* Back to Base Game Action */
+.silksong-actions-bar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.btn-back-hk {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 24px;
+    border-radius: 25px;
+    background: rgba(30, 15, 25, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
     text-decoration: none;
-    padding: 20px 20px;
- }           
-#nav a:hover {
-   background: rgba(255, 255, 255, 0.4);
-   }
-#nav ul li ul {
-	display:none;
-	list-style: none;
-	margin-left: 50px;
-	font-weight: 400;
-	position: absolute;
-	width: 120px;
-	height: 35px;
-	left: 180px;
-	top: 60px;
-	z-index:999;
-}
-#nav ul li ul li{
-	color:#FFF;
-	width: 141px;
-	font-size: 14px;
-    line-height: 240%;
-		line-height:26px;
-		text-align: center;
-		   background: rgba(0, 0, 0, 0.4);
-
-	}
-#nav ul li ul li a:hover {
-	text-decoration:underline;
-	background-color:rgba(0, 0, 0, 0);
+    transition: all 0.25s ease;
 }
 
-	
-#nav ul li:hover ul{
-	display: block;
-	}
-#black{
-	position: absolute;
-	width: 1000px;
-	height: 1320px;
-	left: 222px;
-	top: 64px;
-	background: rgba(0, 0, 0, 0.89);
-	
+.btn-back-hk img {
+    width: 24px;
+    height: 24px;
 }
-#xuzuo{
-	position: absolute;
-	width: 438px;
-	height: 84px;
-	left: 287px;
-	top: 133px;
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 34px;
-	line-height: 41px;
-	display: flex;
-	align-items: center;
-	color: #FFFFFF;
-}
-#situ{
-	position: absolute;
-	width: 322px;
-	height: 328px;
-	left: 287px;
-	top: 208px;
-}
-#sijieshao{
-	position: absolute;
-	width: 533px;
-	height: 249px;
-	left: 662px;
-	top: 390px;
-	font-family: 'Inter';
-	font-style: normal;
-	color: #FFF;
-	font-size: 14px;
-	line-height: 255.02%;
-	color: #FFFFFF;
-}
-#sivideo{
-	position: absolute;
-	width: 652px;
-	height: 385px;
-	left: 268px;
-	top: 755px;
-}
-#si2{
-	position: absolute;
-	width: 233px;
-	height: 206px;
-	left: 945px;
-	top: 814px;
-	font-family: 'Inter';
-	font-style: normal;
-	color: #FFF;
-	font-size: 14px;
-	line-height: 255.02%;
-	color: #FFFFFF;
-}
-#bottom{
-	position: absolute;
-	width: 1440px;
-	height: 65px;
-	left: 0px;
-	top: 1390px;
-	background: linear-gradient(0deg, #000000 -43.77%, rgba(0, 0, 0, 0.6) 168.48%);
-	}
 
-
-#ben{
-	position: absolute;
-	width: 231px;
-	height: 63px;
-	left: 269px;
-	top: 1270px;
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 20px;
-	line-height: 29px;
-	text-decoration: none;
-	color: #FFF;
-
+.btn-back-hk:hover {
+    background: rgba(80, 20, 40, 0.9);
+    border-color: #ffd99e;
+    color: #ffd99e;
+    transform: translateY(-2px);
 }
-#ben a:hover{
-	
-      border-bottom: 1px solid #fff;
+
+/* Mobile Breakpoint (< 768px) */
+@media (max-width: 768px) {
+    .silksong-intro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hornet-img-box {
+        margin-bottom: 10px;
+    }
+
+    .silksong-media-section {
+        grid-template-columns: 1fr;
+    }
 }

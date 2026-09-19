@@ -1,211 +1,207 @@
 @charset "utf-8";
-/* CSS Document */
+/* CSS Document - Responsive Design Concepts (hollow-design1) */
 
-*
-{
-	padding:0px;
-    margin:0px;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
 }
 
 #box1 {
-position: relative;
-width: 1440px;
-height: 1153px;
-background-color:#000;
-}
-#header {
-	position: absolute;
-    width: 1440px;
-    height: 56px;
-    left: 0px;
-    top: 0px;
-    background: rgba(205, 154, 255, 0.20);
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    background-color: #000;
+    padding-top: 60px;
+    padding-bottom: 70px;
 }
 
-#logo {
-	position: absolute;
-	width: 214px;
-	height: 48px;
-	left: 64px;
-	top: -2px;
+/* =========================================================
+   Header & Title Section
+   ========================================================= */
+.design-header-area {
+    text-align: center;
+    max-width: 1000px;
+    margin: 40px auto 30px;
+    padding: 0 16px;
 }
-#nav {
-	position: absolute;
-	width: 638px;
-	height: 48px;
-	left: 791px;
-	top: 8px;
-	font-size: 16px;
 
-
-	
+.design-ornament-up {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
 }
-               
-#nav ul {
-    list-style: none;
-    margin-left: 50px;
-	font-weight:400;
- }           
-#nav li {
-    display: block; 
-    float:left;             
- }           
-#nav a {
-    line-height: 40px;
+
+.design-ornament-up img {
+    max-width: 260px;
+    width: 50%;
+    height: auto;
+}
+
+#title2 {
+    font-size: clamp(26px, 3.8vw, 36px);
+    font-weight: 600;
     color: #fff;
-    text-decoration: none;
-    padding: 20px 20px;
- }           
-#nav a:hover {
-    background-color: rgba(0, 0, 0, 0.60);
- }
-#nav ul li ul {
-	display:none;
-	list-style: none;
-	margin-left: 50px;
-	font-weight: 400;
-	position: absolute;
-	width: 141px;
-	height: 38px;
-	left: 180px;
-	top: 60px;
-}
-#nav ul li ul li{
-	color:#FFF;
-	font-size: 14px;
-    line-height: 240%;
-		line-height:26px;
-		text-align: center;
-	}
-#nav ul li ul li a:hover {
-	text-decoration:underline;
+    letter-spacing: 0.08em;
 }
 
-	
-#nav ul li:hover ul{
-	display: block;
-	}
-#topimg{
-	position: absolute;
-    width: 1440px;
-    height: 670px;
-    left: 0px;
-    top: 0px;
+/* =========================================================
+   4 Game DLC Cards Grid (PC: 4 in 1 single row)
+   ========================================================= */
+.dlc-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(12px, 1.8vw, 26px);
+    max-width: 1260px;
+    width: 95%;
+    margin: 36px auto;
+    justify-items: center;
+}
 
-}
-#musiclogo {
-	position: absolute;
-width: 36px;
-height: 36px;
-left: 1360px;
-top: 7px;
-	background: rgba(205, 154, 255);
-}
-#up1{
-	position: absolute;
-	width: 369px;
-	height: 40px;
-	left: 596px;
-	top: 88px;
-}
-#title2
-{
-	position: absolute;
-	width: 287px;
-	height: 71px;
-	left: 578px;
-	top: 170px;
-	font-size: 32px;
-	color: #FFF;
-	text-align: center;
-
-}
-#game1{
-position: absolute;
-width: 267px;
-height: 370px;
-left: 126px;
-top: 300px;
-}
-#game1 img:hover{
-border: 4px solid rgba(93, 86, 170, 0.64);
-border-radius:4px;}
-#game2{
-position: absolute;
-width: 267px;
-height: 370px;
-left: 433px;
-top: 300px;
-}
-#game2 img:hover{
-border: 4px solid rgba(190, 0, 0, 0.64);
-border-radius: 4px;}
-
-#game3{
-position: absolute;
-width: 267px;
-height: 370px;
-left: 740px;
-top: 300px;
-}
-#game3 img:hover{
-border: 4px solid rgba(32, 134, 178, 0.64);
-border-radius: 4px;}
-
-#game4{
-position: absolute;
-width: 267px;
-height: 370px;
-left: 1047px;
-top: 300px;
-}
-#game4 img:hover{
-border: 4px solid rgba(146, 96, 21, 0.65);
-border-radius: 4px;}
-
-#linian{
-	position: absolute;
-	width: 1200px;
-	height: 143px;
-	left: 126px;
-	top: 724px;
-	color: #FFF;
-	font-weight: 200;
-	font-size: 18px;
-	line-height: 220%;
-	letter-spacing: 0.01em;
-}
-#low1{
-	position: absolute;
-	width: 1090px;
-	height: 54px;
-	left: 175px;
-	top: 952px;
-}
-#bi{
-	position: absolute;
-	width: 246px;
-	height: 58px;
-	left: 1128px;
-	top: 1054px;
-}
-#liuc{
-	position: absolute;
-	width: 114px;
-	height: 40px;
-	left: 1203px;
-	top: 1090px;
-	color: #FFF;
-	font-weight: 400;
-	font-size: 20px;
-
-}
-#liuc a{   
-    color: #fff;
+.dlc-card {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #0d0914;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     text-decoration: none;
 }
-#liuc a:hover{
-		text-decoration:underline;
+
+.dlc-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
 }
 
-	
+.dlc-card:hover img {
+    transform: scale(1.04);
+}
+
+.dlc-card.card-dream:hover {
+    border-color: #9275e0;
+    box-shadow: 0 12px 32px rgba(146, 117, 224, 0.35);
+    transform: translateY(-6px);
+}
+
+.dlc-card.card-grimm:hover {
+    border-color: #e03248;
+    box-shadow: 0 12px 32px rgba(224, 50, 72, 0.35);
+    transform: translateY(-6px);
+}
+
+.dlc-card.card-lifeblood:hover {
+    border-color: #2da4e8;
+    box-shadow: 0 12px 32px rgba(45, 164, 232, 0.35);
+    transform: translateY(-6px);
+}
+
+.dlc-card.card-godmaster:hover {
+    border-color: #e5a832;
+    box-shadow: 0 12px 32px rgba(229, 168, 50, 0.35);
+    transform: translateY(-6px);
+}
+
+/* Tablet & Mobile responsive fallback */
+@media (max-width: 860px) and (min-width: 500px) {
+    .dlc-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 499px) {
+    .dlc-cards-grid {
+        grid-template-columns: 1fr;
+        max-width: 270px;
+        gap: 16px;
+    }
+}
+
+/* =========================================================
+   Concept Philosophy Text
+   ========================================================= */
+#gameword {
+    max-width: 1100px;
+    width: 92%;
+    margin: 40px auto 20px;
+    padding: 0 8px;
+}
+
+#linian {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(15px, 1.7vw, 18px);
+    line-height: 2.2;
+    text-align: justify;
+    letter-spacing: 0.03em;
+}
+
+#linian p {
+    margin-bottom: 16px;
+}
+
+/* =========================================================
+   Lower Ornament & Next Step Button
+   ========================================================= */
+.design-ornament-low {
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    width: 90%;
+    margin: 40px auto 30px;
+}
+
+.design-ornament-low img {
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+}
+
+.next-step-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.next-step-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(30, 20, 44, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 28px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: all 0.25s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+.next-step-btn img {
+    width: 28px;
+    height: auto;
+}
+
+.next-step-btn:hover {
+    background: rgba(80, 50, 120, 0.8);
+    border-color: #ffd99e;
+    color: #ffd99e;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7), 0 0 14px rgba(255, 217, 158, 0.3);
+}

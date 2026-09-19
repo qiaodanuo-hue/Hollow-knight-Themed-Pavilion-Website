@@ -1,0 +1,6 @@
+{
+  "name": "Hollow Knight Themed Pavilion",
+  "description": "Exhibition and design showcase website for a Hollow Knight themed pavilion.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

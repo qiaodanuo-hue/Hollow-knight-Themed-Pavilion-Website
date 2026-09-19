@@ -1,133 +1,211 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>展馆介绍</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+<title>展馆介绍 | Hollow Knight Themed Pavilion</title>
+<link href="style/responsive.css" rel="stylesheet" type="text/css" />
 <link href="style/hollow-zhanguan.css" rel="stylesheet" type="text/css" />
 </head>
 
-
 <body>
-
 <div id="zhanguan">
- <div class="container">
-  <div class="z1">
-    <ul>
-     <li><img src="img/zhanguan/外壳（1）.png" width="133" height="89" /></li>
-     <li><img src="img/zhanguan/外壳（2）.png" width="133" height="89" /></li>
-    </ul>
-  </div>
-  <div class="z2">
-    <ul>
-     <li><img src="img/zhanguan/序厅（2）.png" width="133" height="89" /></li>
-     <li><img src="img/zhanguan/序厅（3）.png" width="133" height="89" /></li>
-    </ul>
-   </div>
-   <div class="z3">  
-    <ul>   
-     <li><img src="img/zhanguan/展厅1（1）.png" width="133" height="89" /></li>
-     <li><img src="img/zhanguan/展厅1（4）.png" width="133" height="89" /></li>
-     <li><img src="img/zhanguan/展厅1（6）.png" width="133" height="89" /></li>
-    </ul>
-   </div>
-   <div claSS="z4">
-    <ul>
-     <li><img src="img/zhanguan/展厅2（2）.png" width="133" height="89" /></li>
-     <li><img src="img/zhanguan/展厅2（1）.png" width="133" height="89" /></li>
-    </ul>
+  <!-- Header -->
+  <header id="header">
+    <div id="logo">
+      <a href="index.html"><img src="img/LOGO.png" alt="Logo" /></a>
+    </div>
+    <nav id="nav">
+      <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="hollow-zhanguan.html">展馆介绍</a></li>
+        <li>
+          <a href="#">关于设计 ▾</a>
+          <ul>
+            <li><a href="hollow-design1.html">设计理念</a></li>
+            <li><a href="hollow-design2.html">设计流程</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">关于游戏 ▾</a>
+          <ul>
+            <li><a href="hollow-game1.html">空洞骑士</a></li>
+            <li><a href="hollow-game2.html">丝之歌</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-   </div>
-   <div class="z5">
-    <ul>
-     <li><img src="img/zhanguan/展厅3（2）.png" width="133" height="89" /></li>
-     <li><img src="img/zhanguan/展厅3（4）.png" width="133" height="89" /></li>
-    </ul>
-   </div>
-   <div class="z6">
-    <ul>
-     <li><img src="img/zhanguan/展厅4（1）.png" width="133" height="89" /></li>
-     <li><img src="img/zhanguan/展厅4（2）.jpg" width="133" height="89" /></li>
-    </ul>
-   </div>
-   <div class="z7">
-    <ul>
-     <li><img src="img/zhanguan/展厅5（2）.png" width="133" height="89" /></li>
-     <li><img src="img/zhanguan/展厅5（3）.png" width="133" height="89" /></li>
-     <li><img src="img/zhanguan/展厅5（4）.png" width="133" height="89" /></li>
-    </ul>
-   </div>
-   <div class="z8">
-    <ul>
-     <li><img src="img/zhanguan/休息区（1）.png" width="133" height="89" /></li>
-     <li><img src="img/zhanguan/休息区（2）.png" width="133" height="89" /></li>
-    </ul>
-   </div> 
+  <!-- Background Music Control -->
+  <div id="musicControl">
+    <a id="mc-play" class="stop" title="播放/暂停背景音乐">
+      <audio id="musicfx" loop="loop">
+        <source src="sound/Hollow Knight.mp3" type="audio/mpeg" />
+      </audio>
+    </a>
   </div>
- <div id="header">
-    <div id="logo"><img src="img/LOGO.png" width="207" height="62" /></div>
-    <div id="nav">
-    <ul><li><a href="hollow.html">首页</a></li></ul>
-    <ul><li><a href="hollow-zhanguan.html">展馆介绍</a></li></ul>
-    <ul>
-     <li><a href="#">关于设计</a>
-      <ul >
-      <li><a href="hollow-design1.html">设计理念</a></li>
-      <li><a href="hollow-design2.html">设计流程</a></li>
+
+  <!-- Mobile Floating Hall Selector Pill -->
+  <button id="mobile-hall-pill" class="mobile-hall-pill" aria-label="选择展厅">
+    <img id="pill-icon" src="img/10014.HP_mask.png" alt="" />
+    <span id="pill-text">馆外观</span>
+    <span class="pill-arrow">▾</span>
+  </button>
+
+  <!-- 8 Full-Screen Hall Showcases -->
+  <div class="container" id="container">
+    <!-- Hall 1: 外观 -->
+    <div class="z1" title="馆外观" data-main-img="img/zhanguan/外壳（1）-2.png">
+      <div class="main-artwork-hitbox" title="点击查看高清大图"></div>
+      <div class="main-view-touch-hint"><span>🔍 全屏高清</span></div>
+      <div class="hall-info-bar">
+        <span class="hall-info-title">馆外观 · 圣巢建筑外壳</span>
+        <span class="hall-info-sub">点击下方效果图切换主视角，点击主图查看全屏高清</span>
+      </div>
+      <ul>
+        <li><img src="img/zhanguan/外壳（1）.png" alt="外壳1" /></li>
+        <li><img src="img/zhanguan/外壳（2）.png" alt="外壳2" /></li>
       </ul>
-     </li>
-    </ul>
-    <ul>
-     <li><a href="#">关于游戏</a>
-      <ul style="left:270px; top:60px;">
-      <li><a href="hollow-game1.html">空洞骑士</a></li>
-      <li><a href="hollow-game2.html">丝之歌</a></li>
+    </div>
+
+    <!-- Hall 2: 序厅 -->
+    <div class="z2" title="馆序厅" data-main-img="img/zhanguan/序厅（1）-2.png">
+      <div class="main-artwork-hitbox" title="点击查看高清大图"></div>
+      <div class="main-view-touch-hint"><span>🔍 全屏高清</span></div>
+      <div class="hall-info-bar">
+        <span class="hall-info-title">馆序厅 · 空间动线与概念漫游</span>
+        <span class="hall-info-sub">点击下方效果图切换主视角，点击主图查看全屏高清</span>
+      </div>
+      <ul>
+        <li><img src="img/zhanguan/序厅（1）.png" alt="序厅1" /></li>
+        <li><img src="img/zhanguan/序厅（2）.png" alt="序厅2" /></li>
+        <li><img src="img/zhanguan/序厅（3）.png" alt="序厅3" /></li>
       </ul>
-     </li>
-    </ul>
     </div>
-    <div id="musicControl">
-    
-      <a id="mc_play" class="on" οnclick="play_music();">
-      <embed 
-      autoplay="autoplay"
-      loop="loop"
-      preload="auto"
-      controls="controls"
-      src="video/07 - Reflection.mp3" width="32" height="32"></embed>
-      </a>
+
+    <!-- Hall 3: 展厅一 (正剧背景：空洞骑士) -->
+    <div class="z3" title="展厅一" data-main-img="img/zhanguan/展厅1（2）-2.png">
+      <div class="main-artwork-hitbox" title="点击查看高清大图"></div>
+      <div class="main-view-touch-hint"><span>🔍 全屏高清</span></div>
+      <div class="hall-info-bar">
+        <span class="hall-info-title">展厅一 · 正剧背景：空洞骑士 (Hollow Knight)</span>
+        <span class="hall-info-sub">点击下方效果图切换主视角，点击主图查看全屏高清</span>
+      </div>
+      <ul>
+        <li><img src="img/zhanguan/展厅1（1）.png" alt="展厅1-1" /></li>
+        <li><img src="img/zhanguan/展厅1（2）.png" alt="展厅1-2" /></li>
+      </ul>
     </div>
- </div>
- <div id="nav-l">
+
+    <!-- Hall 4: 展厅二 (DLC 1：隐藏的梦) -->
+    <div class="z4" title="展厅二" data-main-img="img/zhanguan/展厅2（1）-2.png">
+      <div class="main-artwork-hitbox" title="点击查看高清大图"></div>
+      <div class="main-view-touch-hint"><span>🔍 全屏高清</span></div>
+      <div class="hall-info-bar">
+        <span class="hall-info-title">展厅二 · DLC 1：隐藏的梦 (Hidden Dreams)</span>
+        <span class="hall-info-sub">点击下方效果图切换主视角，点击主图查看全屏高清</span>
+      </div>
+      <ul>
+        <li><img src="img/zhanguan/展厅2（1）.png" alt="展厅2-1" /></li>
+        <li><img src="img/zhanguan/展厅2（2）.png" alt="展厅2-2" /></li>
+        <li><img src="img/zhanguan/展厅2（1）-2.png" alt="展厅2-3" /></li>
+      </ul>
+    </div>
+
+    <!-- Hall 5: 展厅三 (新章：格林剧团) -->
+    <div class="z5" title="展厅三" data-main-img="img/zhanguan/展厅3（3）-2.png">
+      <div class="main-artwork-hitbox" title="点击查看高清大图"></div>
+      <div class="main-view-touch-hint"><span>🔍 全屏高清</span></div>
+      <div class="hall-info-bar">
+        <span class="hall-info-title">展厅三 · 新章：格林剧团 (The Grimm Troupe)</span>
+        <span class="hall-info-sub">点击下方效果图切换主视角，点击主图查看全屏高清</span>
+      </div>
+      <ul>
+        <li><img src="img/zhanguan/展厅3（1）.png" alt="展厅3-1" /></li>
+        <li><img src="img/zhanguan/展厅3（2）.png" alt="展厅3-2" /></li>
+        <li><img src="img/zhanguan/展厅3（3）.png" alt="展厅3-3" /></li>
+      </ul>
+    </div>
+
+    <!-- Hall 6: 展厅四 (DLC 2：生命血) -->
+    <div class="z6" title="展厅四" data-main-img="img/zhanguan/展厅4（1）-2.png">
+      <div class="main-artwork-hitbox" title="点击查看高清大图"></div>
+      <div class="main-view-touch-hint"><span>🔍 全屏高清</span></div>
+      <div class="hall-info-bar">
+        <span class="hall-info-title">展厅四 · DLC 2：生命血 (Lifeblood)</span>
+        <span class="hall-info-sub">点击下方效果图切换主视角，点击主图查看全屏高清</span>
+      </div>
+      <ul>
+        <li><img src="img/zhanguan/展厅4（1）.png" alt="展厅4-1" /></li>
+        <li><img src="img/zhanguan/展厅4（2）.jpg" alt="展厅4-2" /></li>
+      </ul>
+    </div>
+
+    <!-- Hall 7: 展厅五 (终章：寻神者) -->
+    <div class="z7" title="展厅五" data-main-img="img/zhanguan/展厅5（1）-2.png">
+      <div class="main-artwork-hitbox" title="点击查看高清大图"></div>
+      <div class="main-view-touch-hint"><span>🔍 全屏高清</span></div>
+      <div class="hall-info-bar">
+        <span class="hall-info-title">展厅五 · 终章：寻神者 (Godmaster)</span>
+        <span class="hall-info-sub">点击下方效果图切换主视角，点击主图查看全屏高清</span>
+      </div>
+      <ul>
+        <li><img src="img/zhanguan/展厅5（2）.png" alt="展厅5-2" /></li>
+        <li><img src="img/zhanguan/展厅5（3）.png" alt="展厅5-3" /></li>
+        <li><img src="img/zhanguan/展厅5（4）.png" alt="展厅5-4" /></li>
+      </ul>
+    </div>
+
+    <!-- Hall 8: 休闲区 -->
+    <div class="z8" title="休息区" data-main-img="img/zhanguan/休息区（1）-2.png">
+      <div class="main-artwork-hitbox" title="点击查看高清大图"></div>
+      <div class="main-view-touch-hint"><span>🔍 全屏高清</span></div>
+      <div class="hall-info-bar">
+        <span class="hall-info-title">展馆休闲区 · 旅途歇息与玩家交流</span>
+        <span class="hall-info-sub">点击下方效果图切换主视角，点击主图查看全屏高清</span>
+      </div>
+      <ul>
+        <li><img src="img/zhanguan/休息区（1）.png" alt="休息区1" /></li>
+        <li><img src="img/zhanguan/休息区（2）.png" alt="休息区2" /></li>
+      </ul>
+    </div> 
+  </div>
+
+  <!-- Left Navigation Rail / Mobile Bottom Drawer -->
+  <aside id="nav-l" aria-label="展厅导航">
+    <div class="drawer-header">
+      <span class="drawer-title">展厅全览导引</span>
+      <button id="drawer-close" class="drawer-close-btn" aria-label="关闭导览">&times;</button>
+    </div>
     <ul class="controls">
-    
-    <li class="active"><img src="img/10014.HP_mask.png" width="26" height="30" />
-    馆外观</li>
-    <li id="a"><img src="img/10016.Map_Pin_Shade.png" width="30" height="30" />
-    馆序厅</li>
-    <li id="b"><img id="1" img src="img/10001.png" width="30" height="30" />
-    展厅一
-    </li>
-    <li id="c"><img src="img/10003.png" width="26" height="26" />
-    展厅二
-    </li>
-    <li id="d"><img src="img/2222.png" width="26" height="26" />
-    展厅三
-    </li>
-    <li id="e"><img src="img/10007.png" width="26" height="26" />
-    展厅四
-    </li>
-    <li id="f"><img src="img/10012.png" width="26 height="24" />
-    展厅五
-    </li>
-    <li id="g"><img src="img/internet-files_fabrie_63a0059b4e31795c9ec35a60.png" width="30" height="36" />
-    休息区
-    </li>
+      <li class="active" data-index="0" data-name="馆外观" data-icon="img/10014.HP_mask.png"><img src="img/10014.HP_mask.png" alt="" />馆外观</li>
+      <li id="a" data-index="1" data-name="馆序厅" data-icon="img/10016.Map_Pin_Shade.png"><img src="img/10016.Map_Pin_Shade.png" alt="" />馆序厅</li>
+      <li id="b" data-index="2" data-name="展厅一 · 空洞骑士" data-icon="img/10001.png"><img src="img/10001.png" alt="" />展厅一 · 空洞骑士</li>
+      <li id="c" data-index="3" data-name="展厅二 · 隐藏的梦" data-icon="img/10003.png"><img src="img/10003.png" alt="" />展厅二 · 隐藏的梦</li>
+      <li id="d" data-index="4" data-name="展厅三 · 格林剧团" data-icon="img/2222.png"><img src="img/2222.png" alt="" />展厅三 · 格林剧团</li>
+      <li id="e" data-index="5" data-name="展厅四 · 生命血" data-icon="img/10007.png"><img src="img/10007.png" alt="" />展厅四 · 生命血</li>
+      <li id="f" data-index="6" data-name="展厅五 · 寻神者" data-icon="img/10012.png"><img src="img/10012.png" alt="" />展厅五 · 寻神者</li>
+      <li id="g" data-index="7" data-name="展馆休闲区" data-icon="img/internet-files_fabrie_63a0059b4e31795c9ec35a60.png"><img src="img/internet-files_fabrie_63a0059b4e31795c9ec35a60.png" alt="" />休闲区</li>
     </ul>
- </div>
+  </aside>
+  <div id="drawer-backdrop" class="drawer-backdrop"></div>
+
+  <!-- Floating Scroll Buttons -->
+  <div class="scroll-nav-btns">
+    <button id="slide-prev" class="scroll-nav-btn" aria-label="上一展厅">▲</button>
+    <button id="slide-next" class="scroll-nav-btn" aria-label="下一展厅">▼</button>
+  </div>
+
+  <!-- Lightbox Modal for Fullscreen Rendering View -->
+  <div id="img-modal" role="dialog" aria-modal="true" aria-label="渲染图大图预览">
+    <button id="modal-close" class="modal-close-btn" aria-label="关闭预览">&times;</button>
+    <img id="modal-img" src="" alt="预览大图" />
+  </div>
 </div>
-<script type="text/javascript" src="js/roll.js"></script>
+
 <script type="text/javascript" src="js/music.js"></script>
-
+<script type="text/javascript" src="js/roll.js"></script>
+<script type="text/javascript" src="js/nav.js"></script>
 </body>
-
 </html>
