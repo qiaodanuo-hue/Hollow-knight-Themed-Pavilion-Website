@@ -1,0 +1,184 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0px;
+	padding:0px;
+	
+}
+#box4{
+position: relative;
+width: 1440px;
+height: 1455px;
+background: #000000;
+background-image:url(../img/%E8%83%8C%E6%99%AF2.png);
+}
+#header {
+	position: absolute;
+    width: 1440px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.90);
+}
+
+#logo {
+	position: absolute;
+	width: 214px;
+	height: 48px;
+	left: 64px;
+	top: -2px;
+}
+#nav {
+	position: absolute;
+	width: 638px;
+	height: 48px;
+	left: 791px;
+	top: 8px;
+	font-size: 16px;
+
+
+	
+}
+               
+#nav ul {
+    list-style: none;
+    margin-left: 50px;
+	font-weight:400;
+ }           
+#nav li {
+    display: block; 
+    float:left;             
+ }           
+#nav a {
+    line-height: 40px;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 20px;
+ }           
+#nav a:hover {
+   background: rgba(255, 255, 255, 0.4);
+   }
+#nav ul li ul {
+	display:none;
+	list-style: none;
+	margin-left: 50px;
+	font-weight: 400;
+	position: absolute;
+	width: 120px;
+	height: 35px;
+	left: 180px;
+	top: 60px;
+	z-index:999;
+}
+#nav ul li ul li{
+	color:#FFF;
+	width: 141px;
+	font-size: 14px;
+    line-height: 240%;
+		line-height:26px;
+		text-align: center;
+		   background: rgba(0, 0, 0, 0.4);
+
+	}
+#nav ul li ul li a:hover {
+	text-decoration:underline;
+	background-color:rgba(0, 0, 0, 0);
+}
+
+	
+#nav ul li:hover ul{
+	display: block;
+	}
+#black{
+	position: absolute;
+	width: 1000px;
+	height: 1320px;
+	left: 222px;
+	top: 64px;
+	background: rgba(0, 0, 0, 0.89);
+	
+}
+#xuzuo{
+	position: absolute;
+	width: 438px;
+	height: 84px;
+	left: 287px;
+	top: 133px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 34px;
+	line-height: 41px;
+	display: flex;
+	align-items: center;
+	color: #FFFFFF;
+}
+#situ{
+	position: absolute;
+	width: 322px;
+	height: 328px;
+	left: 287px;
+	top: 208px;
+}
+#sijieshao{
+	position: absolute;
+	width: 533px;
+	height: 249px;
+	left: 662px;
+	top: 390px;
+	font-family: 'Inter';
+	font-style: normal;
+	color: #FFF;
+	font-size: 14px;
+	line-height: 255.02%;
+	color: #FFFFFF;
+}
+#sivideo{
+	position: absolute;
+	width: 652px;
+	height: 385px;
+	left: 268px;
+	top: 755px;
+}
+#si2{
+	position: absolute;
+	width: 233px;
+	height: 206px;
+	left: 945px;
+	top: 814px;
+	font-family: 'Inter';
+	font-style: normal;
+	color: #FFF;
+	font-size: 14px;
+	line-height: 255.02%;
+	color: #FFFFFF;
+}
+#bottom{
+	position: absolute;
+	width: 1440px;
+	height: 65px;
+	left: 0px;
+	top: 1390px;
+	background: linear-gradient(0deg, #000000 -43.77%, rgba(0, 0, 0, 0.6) 168.48%);
+	}
+
+
+#ben{
+	position: absolute;
+	width: 231px;
+	height: 63px;
+	left: 269px;
+	top: 1270px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 29px;
+	text-decoration: none;
+	color: #FFF;
+
+}
+#ben a:hover{
+	
+      border-bottom: 1px solid #fff;
+}
