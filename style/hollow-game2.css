@@ -25,16 +25,11 @@ body {
 }
 
 .silksong-panel {
-    max-width: 1080px;
+    max-width: 1000px;
     width: 92%;
     margin: 40px auto;
-    background: rgba(14, 6, 10, 0.93);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 100, 130, 0.2);
-    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.89);
     padding: clamp(24px, 4vw, 54px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(220, 40, 70, 0.15);
 }
 
 .silksong-header-title {
@@ -47,7 +42,7 @@ body {
     letter-spacing: 0.06em;
     margin-bottom: 28px;
     padding-bottom: 16px;
-    border-bottom: 1px solid rgba(255, 100, 130, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .silksong-header-title img {
@@ -72,13 +67,7 @@ body {
     max-width: 320px;
     width: 100%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 120, 150, 0.25);
-    transition: transform 0.3s ease;
-}
-
-.hornet-img-box:hover img {
-    transform: scale(1.02);
+    display: block;
 }
 
 .silksong-desc-text {
@@ -95,61 +84,42 @@ body {
 /* Video & English Lore Section */
 .silksong-media-section {
     margin-top: 40px;
-    padding-top: 36px;
-    border-top: 1px solid rgba(255, 100, 130, 0.15);
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: clamp(20px, 3.5vw, 40px);
-    align-items: center;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: clamp(20px, 3vw, 35px);
 }
 
 .silksong-video-wrapper {
-    position: relative;
+    flex: 1 1 650px;
+    max-width: 652px;
     width: 100%;
-    aspect-ratio: 16 / 9;
     background: #000;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 100, 130, 0.3);
-    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.85);
 }
 
 .silksong-video-wrapper video {
     width: 100%;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;
+    background: #000;
 }
 
-.silksong-lore-box {
-    background: rgba(30, 12, 18, 0.7);
-    border: 1px solid rgba(255, 120, 150, 0.25);
-    border-radius: 8px;
-    padding: clamp(16px, 2.5vw, 24px);
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+.silksong-lore-desc {
+    flex: 0 0 233px;
+    width: 233px;
+    padding-top: 15px;
 }
 
-.silksong-lore-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #ff99aa;
-}
-
-.silksong-lore-header img {
-    width: 28px;
-    height: 28px;
-}
-
-.silksong-lore-text {
-    font-size: clamp(13px, 1.4vw, 15px);
-    line-height: 1.9;
-    color: rgba(255, 255, 255, 0.85);
-    font-style: italic;
+.silksong-lore-desc p {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 255.02%;
+    color: #FFFFFF;
 }
 
 /* Back to Base Game Action */
@@ -157,34 +127,31 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 45px;
 }
 
 .btn-back-hk {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 10px 24px;
-    border-radius: 25px;
-    background: rgba(30, 15, 25, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #fff;
-    font-size: 15px;
-    font-weight: 500;
+    gap: 12px;
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 29px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
     text-decoration: none;
-    transition: all 0.25s ease;
-}
-
-.btn-back-hk img {
-    width: 24px;
-    height: 24px;
+    transition: opacity 0.2s ease;
 }
 
 .btn-back-hk:hover {
-    background: rgba(80, 20, 40, 0.9);
-    border-color: #ffd99e;
-    color: #ffd99e;
-    transform: translateY(-2px);
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+
+.btn-back-hk img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
 }
 
 /* Mobile Breakpoint (< 768px) */
@@ -198,6 +165,17 @@ body {
     }
 
     .silksong-media-section {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .silksong-video-wrapper {
+        max-width: 100%;
+    }
+
+    .silksong-lore-desc {
+        flex: 1 1 auto;
+        width: 100%;
+        padding-top: 0;
     }
 }
