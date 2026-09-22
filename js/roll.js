@@ -59,6 +59,12 @@
         index = targetIndex;
         container.style.top = (-index * 100) + 'vh';
         changeColor(index);
+
+        // 每次切屏滚动时，确保所有展厅大图均处于干净的初始展示状态
+        document.querySelectorAll('.z1, .z2, .z3, .z4, .z5, .z6, .z7, .z8').forEach(function(z) {
+            restoreHallImage(z);
+        });
+
         if (window.scrollY !== 0 || window.pageYOffset !== 0) {
             window.scrollTo(0, 0);
         }
@@ -238,18 +244,19 @@
         });
     }
 
-    // Thumbnail interaction: PC hover-preview & restore vs Mobile click & modal
+    // Thumbnail interaction: 鼠标悬浮即时预览 (Hover Preview) & 移出立刻自动复原初始图 (Restore on Leave)
     var uls = document.querySelectorAll('.container ul');
     uls.forEach(function(ul) {
         var zSection = ul.closest('.z1, .z2, .z3, .z4, .z5, .z6, .z7, .z8');
 
-        // PC 电脑端：鼠标移出缩略图区域时，若未锁定固定，立即恢复至最开始的初始主图
-        ul.addEventListener('mouseleave', function() {
-            if (isPCMode()) {
-                var pinnedLi = ul.querySelector('li[data-pinned="true"]');
-                if (!pinnedLi) {
-                    restoreHallImage(zSection);
-                }
+        // 鼠标移出整个缩略图区域时，立刻自动恢复回最开始的初始大图，并清除高亮
+        var handleRestore = function() {
+            restoreHallImage(zSection);
+        };
+        ul.addEventListener('mouseleave', handleRestore);
+        ul.addEventListener('pointerleave', function(e) {
+            if (e.pointerType === 'mouse' || e.pointerType === 'pen' || !e.pointerType) {
+                handleRestore();
             }
         });
 
@@ -257,73 +264,42 @@
         thumbs.forEach(function(img) {
             var li = img.parentElement;
 
-            // PC 悬停：即时预览对应大图
-            li.addEventListener('mouseenter', function() {
-                if (isPCMode()) {
-                    var pinnedLi = ul.querySelector('li[data-pinned="true"]');
-                    if (!pinnedLi || pinnedLi === li) {
-                        switchHallImage(li, img);
-                    } else {
-                        if (zSection) {
-                            zSection.style.backgroundImage = 'url("' + img.src + '")';
-                            zSection.setAttribute('data-main-img', img.src);
-                            ul.querySelectorAll('li').forEach(function(s) { s.classList.remove('active-thumb'); });
-                            li.classList.add('active-thumb');
-                        }
-                    }
+            // 悬浮预览函数：无延迟即时切换大图背景，并高亮当前选中缩略图
+            var doPreview = function() {
+                switchHallImage(li, img);
+            };
+
+            // 1. 鼠标悬浮即时切图预览
+            li.addEventListener('mouseenter', doPreview);
+            li.addEventListener('pointerenter', function(e) {
+                if (e.pointerType === 'mouse' || e.pointerType === 'pen' || !e.pointerType) {
+                    doPreview();
                 }
             });
 
-            // 点击操作：PC 电脑端可点击固定/取消固定，再次点击恢复最初始大图；移动端切换并支持打开高清全屏
+            // 2. 点击操作：切换视角，并可点击打开全屏高清弹窗
             li.addEventListener('click', function(e) {
                 e.stopPropagation();
-
-                if (isPCMode()) {
-                    var isPinned = li.getAttribute('data-pinned') === 'true';
-                    if (isPinned) {
-                        // 再次点击已选中的图片：取消固定，直接恢复到最开始的图片！
-                        li.removeAttribute('data-pinned');
-                        restoreHallImage(zSection);
-                    } else {
-                        // 首次点击：固定当前图片视角
-                        ul.querySelectorAll('li').forEach(function(s) {
-                            s.removeAttribute('data-pinned');
-                            s.classList.remove('active-thumb');
-                        });
-                        li.setAttribute('data-pinned', 'true');
-                        switchHallImage(li, img);
-                    }
-                    return;
-                }
-
-                // 移动端及平板端（<= 1024px）：
-                var wasActive = li.classList.contains('active-thumb');
                 switchHallImage(li, img);
 
                 if (modal && modalImg) {
-                    // 首次点击切换视角，再次点击已选中的图片进入全屏高清大图
-                    if (wasActive) {
-                        modalImg.src = img.src;
-                        modal.classList.add('show');
-                    }
+                    modalImg.src = img.src;
+                    modal.classList.add('show');
                 }
             });
         });
     });
 
-    // 点击展厅任意空白处，也可取消固定并恢复为最开始的初始图
+    // 点击展厅任意空白处，也自动恢复为最开始的初始图
     document.querySelectorAll('.z1, .z2, .z3, .z4, .z5, .z6, .z7, .z8').forEach(function(z) {
         z.addEventListener('click', function(e) {
-            if (isPCMode()) {
-                if (!e.target.closest('ul') && !e.target.closest('#nav-l')) {
-                    var pinnedLi = z.querySelector('ul li[data-pinned="true"]');
-                    if (pinnedLi) {
-                        restoreHallImage(z);
-                    }
-                }
+            if (!e.target.closest('ul') && !e.target.closest('#nav-l') && !e.target.closest('#header')) {
+                restoreHallImage(z);
             }
         });
     });
+
+    // (取消背景点击强制重置，切图后稳定保留当前视角)
 
     if (modal && modalImg) {
         // Main artwork hitbox / touch hint click (仅在移动端与平板端 <= 1024px 生效)

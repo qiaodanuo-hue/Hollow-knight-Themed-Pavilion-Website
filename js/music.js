@@ -3,6 +3,8 @@ function getMusicBtn() {
     return document.getElementById('mc-play') || document.getElementById('mc_play');
 }
 
+var userManuallyStopped = false;
+
 function play_music(e) {
     var mc = getMusicBtn();
     var audio = mc ? mc.querySelector('audio') : null;
@@ -14,7 +16,9 @@ function play_music(e) {
             audio.pause();
             mc.classList.remove('on');
             mc.classList.add('stop');
+            userManuallyStopped = true;
         } else {
+            userManuallyStopped = false;
             var playPromise = audio.play();
             if (playPromise !== undefined) {
                 playPromise.then(function() {
@@ -35,6 +39,7 @@ function play_music(e) {
 }
 
 function just_play() {
+    if (userManuallyStopped) return;
     var mc = getMusicBtn();
     var audio = mc ? mc.querySelector('audio') : null;
     if (!audio) {
@@ -68,9 +73,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Gentle auto-play attempt (if allowed by browser policy)
+    // Attempt direct autoplay
     setTimeout(function() {
         just_play();
     }, 400);
+
+    // Modern Browser Autoplay Policy compliance:
+    // If the browser blocks direct unmuted autoplay on initial load,
+    // trigger playback upon the user's very first interaction anywhere on the document.
+    function unlockAudioOnInteraction() {
+        var audio = (mc && mc.querySelector('audio')) || document.getElementById('musicfx');
+        if (audio && audio.paused && !userManuallyStopped) {
+            just_play();
+        }
+        ['click', 'touchstart', 'keydown', 'wheel'].forEach(function(evt) {
+            document.removeEventListener(evt, unlockAudioOnInteraction);
+        });
+    }
+
+    ['click', 'touchstart', 'keydown', 'wheel'].forEach(function(evt) {
+        document.addEventListener(evt, unlockAudioOnInteraction, { once: true, passive: true });
+    });
 });
 
