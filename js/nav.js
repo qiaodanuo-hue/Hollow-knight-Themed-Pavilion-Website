@@ -13,8 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
         toggleBtn.setAttribute('aria-label', '打开菜单');
         toggleBtn.innerHTML = '<span class="bar"></span><span class="bar"></span><span class="bar"></span>';
         
-        // Insert toggle button into header
-        header.appendChild(toggleBtn);
+        // Insert toggle button into header-right-group if present, else header
+        var rightGroup = header.querySelector('.header-right-group') || header;
+        rightGroup.appendChild(toggleBtn);
 
         toggleBtn.addEventListener('click', function(e) {
             e.stopPropagation();

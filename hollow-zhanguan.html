@@ -9,49 +9,53 @@
 </head>
 
 <body>
-<div id="zhanguan">
-  <!-- Header -->
+  <!-- Fixed Header (Direct child of body, permanently fixed at top across scroll) -->
   <header id="header">
     <div id="logo">
       <a href="index.html"><img src="img/LOGO.png" alt="Logo" /></a>
     </div>
-    <nav id="nav">
-      <ul>
-        <li><a href="index.html">首页</a></li>
-        <li><a href="hollow-zhanguan.html">展馆介绍</a></li>
-        <li>
-          <a href="#">关于设计 ▾</a>
-          <ul>
-            <li><a href="hollow-design1.html">设计理念</a></li>
-            <li><a href="hollow-design2.html">设计流程</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">关于游戏 ▾</a>
-          <ul>
-            <li><a href="hollow-game1.html">空洞骑士</a></li>
-            <li><a href="hollow-game2.html">丝之歌</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+
+    <div class="header-right-group">
+      <nav id="nav">
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="hollow-zhanguan.html">展馆介绍</a></li>
+          <li>
+            <a href="#">关于设计</a>
+            <ul>
+              <li><a href="hollow-design1.html">设计理念</a></li>
+              <li><a href="hollow-design2.html">设计流程</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">关于游戏</a>
+            <ul>
+              <li><a href="hollow-game1.html">空洞骑士</a></li>
+              <li><a href="hollow-game2.html">丝之歌</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Background Music Control (Clean borderless icon without any square box) -->
+      <div id="musicControl">
+        <a id="mc-play" class="stop" title="播放/暂停背景音乐" role="button" aria-label="播放或暂停背景音乐" tabindex="0">
+          <audio id="musicfx" loop="loop" preload="auto">
+            <source src="video/07 - Reflection.mp3" type="audio/mpeg" />
+          </audio>
+        </a>
+      </div>
+    </div>
   </header>
 
-  <!-- Background Music Control -->
-  <div id="musicControl">
-    <a id="mc-play" class="stop" title="播放/暂停背景音乐">
-      <audio id="musicfx" loop="loop">
-        <source src="sound/Hollow Knight.mp3" type="audio/mpeg" />
-      </audio>
-    </a>
-  </div>
-
-  <!-- Mobile Floating Hall Selector Pill -->
-  <button id="mobile-hall-pill" class="mobile-hall-pill" aria-label="选择展厅">
-    <img id="pill-icon" src="img/10014.HP_mask.png" alt="" />
-    <span id="pill-text">馆外观</span>
-    <span class="pill-arrow">▾</span>
-  </button>
+  <!-- Exhibition Container -->
+  <div id="zhanguan">
+    <!-- Mobile Floating Hall Selector Pill -->
+    <button id="mobile-hall-pill" class="mobile-hall-pill" aria-label="选择展厅">
+      <img id="pill-icon" src="img/10014.HP_mask.png" alt="" />
+      <span id="pill-text">馆外观</span>
+      <span class="pill-arrow">▾</span>
+    </button>
 
   <!-- 8 Full-Screen Hall Showcases -->
   <div class="container" id="container">

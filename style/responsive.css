@@ -41,15 +41,16 @@ a {
     right: 0 !important;
     width: 100% !important;
     height: 60px !important;
-    background: rgba(12, 6, 20, 0.92) !important;
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    background: rgba(12, 6, 20, 0.68) !important;
+    backdrop-filter: blur(16px) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(160%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25) !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     padding: 0 clamp(16px, 4vw, 40px) !important;
-    z-index: 1000 !important;
+    z-index: 2000 !important;
     box-sizing: border-box !important;
 }
 
@@ -211,6 +212,24 @@ a {
         display: flex !important;
     }
 
+    .header-right-group {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        height: 100%;
+    }
+
+    #musicControl,
+    #musicControl a,
+    #musicControl a#mc-play {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        background-color: transparent !important;
+        border-radius: 0 !important;
+        -webkit-tap-highlight-color: transparent !important;
+    }
+
     #nav {
         display: none !important;
         position: fixed !important;
@@ -228,7 +247,12 @@ a {
         padding: 16px 0 24px 0 !important;
         flex-direction: column !important;
         align-items: stretch !important;
-        z-index: 999 !important;
+        z-index: 1040 !important;
+    }
+
+    body.menu-active .mobile-hall-pill {
+        opacity: 0 !important;
+        pointer-events: none !important;
     }
 
     #nav.nav-open {
