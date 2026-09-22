@@ -25,28 +25,62 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Handle touch/click on menu items with submenus on mobile
-    var dropdownItems = nav.querySelectorAll('li:has(ul), li');
+    // Handle dropdown menus on desktop and mobile
+    var dropdownItems = nav.querySelectorAll('#nav > ul > li');
     dropdownItems.forEach(function(item) {
         var sub = item.querySelector('ul');
-        if (sub) {
-            var link = item.querySelector('a');
-            if (link) {
-                link.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 900) {
-                        // If clicking a parent link with href="#"
-                        if (link.getAttribute('href') === '#' || link.getAttribute('href') === 'javascript:;') {
-                            e.preventDefault();
-                            item.classList.toggle('sub-open');
-                        }
-                    }
-                });
+        if (!sub) return;
+
+        var link = item.querySelector('a');
+        var timer = null;
+
+        // Desktop: smooth hover with grace buffer so moving down to sub-menu never flickers or disappears
+        var handleEnter = function() {
+            if (window.innerWidth > 900) {
+                if (timer) {
+                    clearTimeout(timer);
+                    timer = null;
+                }
+                item.classList.add('dropdown-active');
             }
+        };
+
+        var handleLeave = function() {
+            if (window.innerWidth > 900) {
+                timer = setTimeout(function() {
+                    item.classList.remove('dropdown-active');
+                }, 220); // 220ms grace period
+            }
+        };
+
+        item.addEventListener('mouseenter', handleEnter);
+        item.addEventListener('mouseleave', handleLeave);
+        sub.addEventListener('mouseenter', handleEnter);
+        sub.addEventListener('mouseleave', handleLeave);
+
+        if (link) {
+            link.addEventListener('click', function(e) {
+                if (link.getAttribute('href') === '#' || link.getAttribute('href') === 'javascript:;') {
+                    e.preventDefault();
+                    if (window.innerWidth <= 900) {
+                        item.classList.toggle('sub-open');
+                    } else {
+                        // Desktop: clicking also toggles and keeps the menu open
+                        item.classList.toggle('dropdown-active');
+                    }
+                }
+            });
         }
     });
 
-    // Close menu when clicking outside on mobile
+    // Close menu when clicking outside
     document.addEventListener('click', function(e) {
+        if (!nav.contains(e.target)) {
+            dropdownItems.forEach(function(item) {
+                item.classList.remove('dropdown-active');
+            });
+        }
+
         if (window.innerWidth <= 900 && nav.classList.contains('nav-open')) {
             if (!nav.contains(e.target) && !document.getElementById('mobile-menu-btn').contains(e.target)) {
                 nav.classList.remove('nav-open');

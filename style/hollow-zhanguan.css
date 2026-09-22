@@ -253,13 +253,15 @@ html, body {
    ========================================================= */
 .header-right-group {
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    align-self: stretch;
     gap: clamp(10px, 1.8vw, 20px);
     height: 100%;
 }
 
 #musicControl {
     position: relative;
+    align-self: center;
     width: 32px;
     height: 32px;
     display: flex;

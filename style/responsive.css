@@ -79,15 +79,17 @@ a {
     top: auto !important;
     width: auto !important;
     height: 100% !important;
+    align-self: stretch !important;
     display: flex !important;
-    align-items: center !important;
+    align-items: stretch !important;
     font-size: 15px !important;
     font-weight: 500 !important;
 }
 
 #nav > ul {
     display: inline-flex !important;
-    align-items: center !important;
+    align-items: stretch !important;
+    align-self: stretch !important;
     list-style: none !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -97,7 +99,8 @@ a {
 #nav > ul > li {
     position: relative !important;
     display: flex !important;
-    align-items: center !important;
+    align-items: stretch !important;
+    align-self: stretch !important;
     height: 100% !important;
     float: none !important;
 }
@@ -113,33 +116,50 @@ a {
     white-space: nowrap !important;
 }
 
-#nav > ul > li > a:hover {
+#nav > ul > li > a:hover,
+#nav > ul > li.dropdown-active > a {
     color: #fff !important;
     background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-/* Dropdown styling */
+/* Dropdown styling - Perfectly attached to bottom of nav bar with no unreachable gap */
 #nav ul li ul {
     display: none !important;
     position: absolute !important;
-    top: 60px !important;
+    top: 100% !important; /* Immediately below header without any detached gap */
     left: 50% !important;
     transform: translateX(-50%) !important;
-    background: rgba(18, 12, 28, 0.96) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
+    background: rgba(18, 12, 28, 0.98) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
     border: 1px solid rgba(255, 255, 255, 0.16) !important;
     border-radius: 6px !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75) !important;
     min-width: 140px !important;
     width: auto !important;
     height: auto !important;
     padding: 6px 0 !important;
     margin: 0 !important;
-    z-index: 1003 !important;
+    z-index: 2005 !important;
 }
 
-#nav ul li:hover > ul {
+/* Invisible bridge: covers the boundary area between parent nav item and dropdown menu,
+   ensuring the mouse cursor NEVER leaves the hover zone when moving down */
+#nav ul li ul::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -16px !important;
+    left: -20px !important;
+    right: -20px !important;
+    height: 20px !important;
+    background: transparent !important;
+    display: block !important;
+    pointer-events: auto !important;
+    z-index: 1 !important;
+}
+
+#nav ul li:hover > ul,
+#nav ul li.dropdown-active > ul {
     display: block !important;
 }
 
